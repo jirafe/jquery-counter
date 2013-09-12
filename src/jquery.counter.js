@@ -4,7 +4,7 @@
  * Copyright (c) 2012 Sophilabs <hi@sophilabs.com>
  * MIT License
  */
- 
+
 !(function (context, definition) {
   if (typeof define == 'function' && typeof define.amd  == 'object') define(['jquery'], definition);
   else definition(context['$']);
@@ -56,7 +56,9 @@
                                    String(part.stop).length);
                 for (var j = 0; j < len; j++) {
                     var snth = nth(s, j), vnth = nth(v, j);
-                    if (vnth > snth) {
+                    if (vnth == 9 && snth == 0) {
+                      sum += "0";
+                    } else if (vnth > snth) {
                         sum += String(vnth-1);
                     } else if (vnth < snth) {
                         sum += String(vnth+1);
